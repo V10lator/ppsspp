@@ -526,7 +526,7 @@ struct RenderPassInfo {
 class DrawContext {
 public:
 	virtual ~DrawContext();
-	bool CreatePresets();
+	virtual bool CreatePresets();
 	void DestroyPresets();
 
 	virtual const DeviceCaps &GetDeviceCaps() const = 0;
