@@ -335,7 +335,7 @@ void TextureCacheGX2::ApplyTextureFramebuffer(TexCacheEntry *entry, VirtualFrame
 		const GEPaletteFormat clutFormat = gstate.getClutPaletteFormat();
 		GX2Texture *clutTexture = depalShaderCache_->GetClutTexture(clutFormat, clutHash_, clutBuf_, expand32);
 
-		Draw::Framebuffer *depalFBO = framebufferManagerGX2_->GetTempFBO(framebuffer->renderWidth, framebuffer->renderHeight, Draw::FBO_8888);
+		Draw::Framebuffer *depalFBO = framebufferManagerGX2_->GetTempFBO(TempFBO::DEPAL, framebuffer->renderWidth, framebuffer->renderHeight, Draw::FBO_8888);
 		shaderManager_->DirtyLastShader();
 		draw_->BindPipeline(nullptr);
 

@@ -1808,9 +1808,7 @@ if(ANDROID)
   endif()
 endif()
 
-if(NOT WIIU)
-   set(CoreExtraLibs ${CoreExtraLibs} armips)
-endif()
+set(CoreExtraLibs ${CoreExtraLibs} armips)
 
 # needed for VK_USE_PLATFORM_XCB_KHR only
 #if(VULKAN AND NOT WIN32)
