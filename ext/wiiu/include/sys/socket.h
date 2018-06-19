@@ -13,7 +13,7 @@ extern "C" {
 
 #define AF_UNSPEC 0
 #define AF_INET   2
-#define AF_INET6 AF_UNSPEC
+#define AF_INET6  -1
 
 #define SOCK_STREAM     1
 #define SOCK_DGRAM      2

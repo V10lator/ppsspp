@@ -37,7 +37,7 @@ include_directories($ENV{DEVKITPRO}/portlibs/ppc/include)
 link_directories($ENV{DEVKITPRO}/portlibs/ppc/lib)
 
 
-set(ARCH_FLAGS "-mwup -mcpu=750 -meabi -mhard-float -D__powerpc__ -DWORDS_BIGENDIAN -U__INT32_TYPE__ -U__UINT32_TYPE__ -D__INT32_TYPE__=int")
+set(ARCH_FLAGS "-mwup -mcpu=750 -meabi -mhard-float -D__powerpc__ -DWORDS_BIGENDIAN -U__INT32_TYPE__ -U__UINT32_TYPE__ -D__INT32_TYPE__=int -DFD_SETSIZE=32")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${ARCH_FLAGS}")
 set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${ARCH_FLAGS} -mregnames")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ARCH_FLAGS}")
