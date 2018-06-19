@@ -221,18 +221,18 @@ void FramebufferManagerVulkan::MakePixelTexture(const u8 *srcPixels, GEBufferFor
 		for (int y = 0; y < height; y++) {
 			const u16_le *src16 = (const u16_le *)srcPixels + srcStride * y;
 			const u32_le *src32 = (const u32_le *)srcPixels + srcStride * y;
-			u32 *dst = (u32 *)convBuf_ + width * y;
+			u32_le *dst = (u32_le *)convBuf_ + width * y;
 			switch (srcPixelFormat) {
 			case GE_FORMAT_565:
-				ConvertRGBA565ToRGBA8888((u32 *)dst, src16, width);
+				ConvertRGBA565ToRGBA8888(dst, src16, width);
 				break;
 
 			case GE_FORMAT_5551:
-				ConvertRGBA5551ToRGBA8888((u32 *)dst, src16, width);
+				ConvertRGBA5551ToRGBA8888(dst, src16, width);
 				break;
 
 			case GE_FORMAT_4444:
-				ConvertRGBA4444ToRGBA8888((u32 *)dst, src16, width);
+				ConvertRGBA4444ToRGBA8888(dst, src16, width);
 				break;
 
 			case GE_FORMAT_8888:
